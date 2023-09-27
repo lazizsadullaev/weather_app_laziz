@@ -6,7 +6,6 @@ import config
 
 
 def get_weather():
-
     weather_data = []
 
     username = input('Please enter your username :  ')
@@ -29,9 +28,7 @@ def get_weather():
                 continue
 
             if city == "save":
-
                 continue
-
 
             config.parameters["q"] = city
 
@@ -48,15 +45,15 @@ def get_weather():
             speed = response["wind"]["speed"]
 
             _db.add_weather('weather.db', weather_id=212,
-                        city_name=name,
-                        temp=temp,
-                        timezone=tz,
-                        created_at=dt,
-                        sunset=sunset,
-                        sunrise=sunrise,
-                        description=description,
-                        wind_speed=speed,
-                        user_id=1)
+                            city_name=name,
+                            temp=temp,
+                            timezone=tz,
+                            created_at=dt,
+                            sunset=sunset,
+                            sunrise=sunrise,
+                            description=description,
+                            wind_speed=speed,
+                            user_id=1)
 
             weather_data.append(
                 utils.make_weather_dict(
